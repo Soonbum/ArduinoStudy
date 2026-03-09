@@ -156,8 +156,18 @@
 
 * 기타 유용한 함수
   - `delay(밀리초)`: 지정된 밀리초 동안 프로그램 일시정지
+
+* 시리얼 통신
+  - `SoftwareSerial(int rxPin, int txPin)`: 통신 포트를 위한 핀 번호 지정
   - `Serial.begin(baud_rate)`: 시리얼 통신 시작 및 속도 설정
+  - `Serial.end()`: 시리얼 통신 종료
+  - `Serial.available()`: 시리얼 포트로 도착한 버퍼 바이트 수를 반환
+  - `Serial.read()`: 수신 데이터의 1번째 바이트 값 반환, 데이터가 없으면 -1 (함수 실행 후 포인터 이동 O)
+  - `Serial.peek()`: 수신 데이터의 1번째 바이트 값 반환, 데이터가 없으면 -1 (함수 실행 후 포인터 이동 X)
+  - `Serial.flush()`: 수신 버퍼 지움
   - `Serial.print(val, format)`: 데이터를 사람이 읽을 수 있는 문자로 변환하여 전송합니다. (value: int, char 등, format: DEC, BIN, HEX, OCT)
   - `Serial.println(...)`: print와 같지만 끝에 줄바꿈 문자(\r\n)를 추가함
   - `Serial.write(val)`: 데이터를 변환 없이 원 바이트(Raw Data) 그대로 전송합니다. 이미지나 바이너리 파일 전송 시 사용함
   - `Serial.write(buf, len)`: 배열에서 지정한 길이만큼 바이트 단위로 연속 전송
+
+* LCD 장치의 경우, 제조사에 따라 추가해야 할 헤더 파일, 함수가 다르기 때문에 관련 문서를 참조할 것
