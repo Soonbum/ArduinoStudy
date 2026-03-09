@@ -29,6 +29,20 @@
   - [wokwi](https://wokwi.com/)
   - ...
 
+* 요즘은 많은 칩들이 아두이노 프레임워크로 표준화되어 있음
+  - Atmega, ESP32, STM32 등 많은 칩들이 아두이노 프레임워크로 작동할 수 있도록 되어 있음 (Hardware Abstraction Layer)
+  - 아두이노 프레임워크 외에도 MicroPython, CircuitPython도 있음
+  - 하지만 칩의 최고의 성능을 끌어내려면 제조사 전용 SDK(ESP-IDF, STM32Cube 등)를 이용해야 함
+
+* 칩에 따른 특성 차이
+  | 구분 | Arduino Uno | ESP32 | STM32 (Blue Pill 등) |
+  | ---- | ----------- | ----- | -------------------- |
+  | 제조사 | Microchip (Atmel) | Espressif Systems | STMicroelectronics |
+  | 연산 속도 | 16 MHz (느림) | 240 MHz (매우 빠름) | 72 MHz ~ 400 MHz 이상 |
+  | 통신 | 별도 모듈 필요 | Wi-Fi & Bluetooth | 내장산업용 통신(CAN 등) 강점 |
+  | 전압 | 5V | 3.3V | 3.3V |
+  | 주요 용도 | 간단한 교육용, 입문 | IoT, 무선 제어 | 고성능 드론, 산업용 장비 |
+
 ## 아두이노 마이컴 보드 인터페이스
 
 * 다음은 아두이노 우노 R3를 예시로 보여주는 입출력 인터페이스이다.
